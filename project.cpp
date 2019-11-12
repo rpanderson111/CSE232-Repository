@@ -38,7 +38,6 @@ int main() {
                     shared += 1;
                 }
             }
-            //checks length of user's word and word within file, then finds the difference
             int comparing_size = comparing_word.size();
             int diff = check_diff(input_size, comparing_size);
             //checks length of in_common vector, then appends word if meets criteria
