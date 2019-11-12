@@ -7,6 +7,15 @@ using std::string;
 #include<fstream>
 using std::ifstream;
 
+//checks length of user's word and word within file, then finds the difference
+int check_diff(int input, int comparing) {
+    if (input_size >= comparing_size) {
+        return (input_size - shared);
+    } else {
+        return (comparing_size - shared);
+    }
+}
+
 int main() {
     //pulls in file
     ifstream input ("common_passwords.txt");
@@ -31,12 +40,7 @@ int main() {
             }
             //checks length of user's word and word within file, then finds the difference
             int comparing_size = comparing_word.size();
-            int diff;
-            if (input_size >= comparing_size) {
-                diff = input_size - shared;
-            } else {
-                diff = comparing_size - shared;
-            }
+            int diff = check_diff(input_size, comparing_size);
             //checks length of in_common vector, then appends word if meets criteria
             if (in_common.empty() || diff == final_diff) {
                 in_common.push_back(comparing_word);
